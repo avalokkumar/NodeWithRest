@@ -1,13 +1,12 @@
-
-/**
- * Module dependencies.
- */
-
 var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
   , http = require('http')
   , path = require('path');
+
+var xml = require('xml');
+var Client = require('node-rest-client').Client;
+var client = new Client();
 
 var app = express();
 
@@ -29,6 +28,30 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/users', user.list);
+
+/*var args = {
+	    data: { test: "hello" },
+	    headers: { "Content-Type": "application/xml" }
+	};*/
+
+/*client.registerMethod("xmlMethod", "http://localhost:8080/greeting", "GET");
+
+client.methods.xmlMethod(function (data, response) {
+    // parsed response body as js object 
+    console.log(data);
+    // raw response 
+    console.log(response);
+});*/
+
+app.get("/user", function(req, res){
+	client.get("http://localhost:8080/greeting", function(data, response){
+		//console.log(data);
+		console.log("Request Message : "+res.statusCode);
+		console.log(data);
+		//res.set('Content-Type', 'application/xml');
+		res.send(data);
+	});
+});
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

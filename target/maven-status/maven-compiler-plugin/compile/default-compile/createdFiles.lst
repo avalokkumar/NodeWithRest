@@ -1,3 +1,9 @@
-com\poc\application\Greeting.class
+com\poc\model\Address.class
+com\poc\model\Contact.class
+com\poc\model\Greeting.class
+com\poc\application\PersonServiceImpl.class
+com\poc\application\PersonController.class
+com\poc\application\PersonService.class
 com\poc\application\GreetingController.class
 com\poc\application\Application.class
+com\poc\model\Person.class
