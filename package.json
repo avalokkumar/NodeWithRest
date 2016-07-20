@@ -8,7 +8,12 @@
   "dependencies": {
     "express": "3.2.6",
     "jade": "*",
+    "jasmine-node": "^1.14.5",
     "node-rest-client": "^2.0.1",
+    "request": "^2.73.0",
     "xml": "^1.0.1"
+  },
+  "scripts": {
+    "test": "jasmine-node spec"
   }
 }

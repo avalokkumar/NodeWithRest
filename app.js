@@ -40,12 +40,20 @@ app.get("/user", function(req, res){
 	});
 });
 app.get("/persons", function(req, res){
+	
+	req.on("error", function(e) {
+		console.log("Error Occured... "+e);
+	})
 	client.get("http://localhost:8080/person", function(data, response){
 		console.log(data);
 		res.json(data);
 	});
 });
 app.get("/persons/11", function(req, res){
+	
+	req.on("error", function(e) {
+		console.log("Error Occured... "+e);
+	})
 	client.get("http://localhost:8080/person/11", function(data, response){
 		console.log(data);
 		res.json(data);

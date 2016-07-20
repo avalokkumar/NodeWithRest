@@ -29,14 +29,13 @@ public class PersonController {
 	public void setPersonService(PersonService personService) {
 		this.personService = personService;
 	}
-//, headers = { "Accept=application/xml" }
 	@RequestMapping(path="/{id}", method=RequestMethod.GET, headers = { "Accept=application/xml" }, produces="application/xml")
 	public Person getPerson(@PathVariable(value="id") String id) {
 		System.out.println("Id : "+id);
 		return personService.findPerson(id);
 	}
 	
-	@RequestMapping(path="/", method=RequestMethod.GET, headers = { "Accept=application/xml" }, produces="application/xml")
+	@RequestMapping(path="/allPerson", method=RequestMethod.GET, headers = { "Accept=application/xml" }, produces="application/xml")
 	public List<Person> getAllPerson(){
 		System.out.println("To retrieve all person details");
 		return personService.findAllPerson();

@@ -13,7 +13,6 @@ public class Person {
 	
 	@XmlElement
 	private long personId;
-	
 	@XmlElement
 	private String name;
 	@XmlElement
