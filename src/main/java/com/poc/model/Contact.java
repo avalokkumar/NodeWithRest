@@ -1,11 +1,14 @@
 package com.poc.model;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement
 @XmlType(propOrder={"phone1", "phone2", "fax"})
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Contact {
 	
 	@XmlElement

@@ -1,11 +1,14 @@
 package com.poc.model;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement
-@XmlType(propOrder={"address1", "address2", "city", "state", "pingCode"})
+@XmlType(propOrder={"address1", "address2", "city", "state", "pinCode"})
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Address {
 	
 	@XmlElement
