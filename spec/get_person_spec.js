@@ -2,24 +2,16 @@ var request = require('request');
 
 var base_url = "http://localhost:3000";
 
-var personObj = { person:
-					{ personId: [ '11' ],
-					   name: [ 'Clayman' ],
-					   age: [ '25' ],
-					   address: [ [Object] ],
-					   contact: [ [Object] ] 
-					} 
-			};
-
 describe("Person GET server", function(){
 	
 	describe("Test GET Server", function(){
 		
-		beforeEach(function(){
+		/*beforeEach(function(){
 			nock('https://en.wikipedia.org')
 			.get('/wiki/Abraham_Lincoln')
 			.reply(200, "Mock Abraham Lincoln Page");
-		});
+		});*/
+		
 		it("Return Status code 200", function(done){
 			
 			request.get(base_url, function(err, res, body){

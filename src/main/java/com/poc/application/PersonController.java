@@ -17,18 +17,7 @@ public class PersonController {
 
 	@Autowired(required=true)
 	public PersonService personService;
-	/*
-	public PersonController(PersonService personService){
-		this.personService = personService;
-	}*/
 	
-	public PersonService getPersonService() {
-		return personService;
-	}
-
-	public void setPersonService(PersonService personService) {
-		this.personService = personService;
-	}
 	@RequestMapping(path="/{id}", method=RequestMethod.GET, headers = { "Accept=application/xml" }, produces="application/xml")
 	public Person getPerson(@PathVariable(value="id") String id) {
 		System.out.println("Id : "+id);
@@ -40,6 +29,22 @@ public class PersonController {
 		System.out.println("To retrieve all person details");
 		return personService.findAllPerson();
 	}
+	
+	/*@RequestMapping(path="/personInt", method=RequestMethod.POST, produces="application/octect-stream")
+	public Response getPersonInterview(){
+		File file = new File("../media/TomAndJerry.mpg");
+		System.out.println("To retrieve all person details");
+		return Response.ok(file, MediaType.APPLICATION_OCTET_STREAM)
+			      .header("Content-Disposition", "attachment; filename=\"" + file.getName() + "\"" )
+			      .build();
+	}*/
 
+	public PersonService getPersonService() {
+		return personService;
+	}
+	
+	public void setPersonService(PersonService personService) {
+		this.personService = personService;
+	}
 }
 

@@ -1,0 +1,30 @@
+"paths": {
+    "/persons/{id}": {
+       "get": {
+          "tags": ["person", 'contact', 'address'],
+          "description": "It will provide the person details based on person id.",
+          "operationId": "for the URL",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "description": "ID to retrieve details",
+                    "required": true,
+                    "type": "string"
+                }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "create response",
+              "schema": {
+                 "$ref": "#/definitions/response"
+              }
+            }
+          } //end of responses
+          }
+        }
+    },
